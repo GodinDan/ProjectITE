@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Godin Dan Estella | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- ===================== NAVBAR ===================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">GDE<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><button class="theme-toggle" id="themeToggle" title="Dark / Light mode">🌙</button></li>
+      <li class="nav-datetime"><span id="dateTime" aria-label="Current date and time"></span></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===================== HOME ===================== -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <p class="hello">👋 Hello and Welcome! 🎉</p>
+      <h1>Hi, I'm <span class="gradient-text">Godin Dan Estella</span></h1>
+      <h2 class="typed-wrap">Aspiring <span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="intro">
+        I'm a passionate and curious learner who loves exploring how technology shapes the world
+        we live in — from the apps we use daily to the games and websites that connect people
+        across the globe. This portfolio is a collection of my journey, my skills, and the
+        projects I've built along the way as an aspiring IT professional. Thank you for visiting!
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">View My Projects</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="img-ring"></div>
+      <img src="image/profile.jpg" alt="Profile photo of Godin Dan Estella" id="profileImg">
+    </div>
+  </div>
+  
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="section">
+  <div class="container">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-card reveal">
+      <p>
+        I'm <strong>Godin Dan Estella</strong>, 20 years old, currently pursuing a
+        <strong>Bachelor of Science in Information Technology (BSIT)</strong> at
+        <strong>Bestlink College of the Philippines</strong>. I chose this course because I've always
+        been deeply fascinated by how things work behind the screens — how applications are developed,
+        how video games come to life, and how websites are built to serve and connect people in our
+        modern digital world. I want to not just use technology, but understand it, create with it,
+        and contribute to it.
+      </p>
+      <p>
+        Outside of my studies, I have hobbies that keep me inspired and balanced. I really enjoy
+        watching anime, which fuels my creativity and imagination, and playing games — whether for fun
+        or to observe the design and logic behind them. These interests also help me think more
+        critically and creatively when I'm working on my own tech projects. I'm someone who loves
+        learning new things, solving puzzles, and figuring out how to fix and improve things around me.
+      </p>
+
+      <div class="more-info" id="moreInfo">
+        <p>
+          🎯 <strong>My Goal:</strong> To grow into a skilled IT professional who can build useful,
+          meaningful digital solutions in the future — creating websites, apps, and games that make a
+          real difference in people's lives.
+        </p>
+        <div class="info-grid">
+          <div class="info-item"><span>Name</span>Godin Dan Estella</div>
+          <div class="info-item"><span>Age</span>20 years old</div>
+          <div class="info-item"><span>Course</span>BSIT</div>
+          <div class="info-item"><span>School</span>Bestlink College of the Philippines</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary read-more" id="readMoreBtn">Read More ▼</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SKILLS ===================== -->
+<section id="skills" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">My <span>Skills</span></h2>
+
+    <h3 class="skills-sub">💻 Technical Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-icon">💻</div><h4>Coding</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">🔧</div><h4>Fixing Appliances &amp; Technical Issues</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">🌐</div><h4>Web Development Basics</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">📱</div><h4>Tech Troubleshooting</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">📝</div><h4>Documentation &amp; Organization</h4></div>
+    </div>
+
+    <h3 class="skills-sub">🌟 Personal Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-card reveal"><div class="skill-icon">🎨</div><h4>Creativity</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">🧩</div><h4>Problem Solving</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">🤝</div><h4>Personal Skills</h4></div>
+      <div class="skill-card reveal"><div class="skill-icon">🧠</div><h4>Critical Thinking</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECTS ===================== -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">My <span>Projects</span></h2>
+    <p class="section-sub">Here are the projects I've created from Prelim to Finals:</p>
+
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-icon">📄</div>
+        <h4>FirstHTMLPage</h4>
+        <p>My very first HTML page — the beginning of my web development journey.</p>
+        <img class="project-image" src="image/first-html-page.jpg" alt="FirstHTMLPage project screenshot" loading="lazy">
+        <a class="btn btn-primary" href="https://godindan.github.io/FirstHTMLPage/" target="_self">Open Project</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">⭐</div>
+        <h4>Things I Like the Most</h4>
+        <p>A page showcasing the things I'm most passionate about.</p>
+        <img class="project-image" src="image/things-i-like.jpg" alt="Things I Like the Most project screenshot" loading="lazy">
+        <a class="btn btn-primary" href="https://godindan.github.io/ITE1ACTIVITY/" target="_self">Open Project</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">🎵</div>
+        <h4>Waydown_Song</h4>
+        <p>A song-themed page featuring "Waydown".</p>
+        <img class="project-image" src="image/waydown-song.jpg" alt="Waydown Song project screenshot" loading="lazy">
+        <a class="btn btn-primary" href="https://godindan.github.io/Waydown-song/" target="_self">Open Project</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">🍎</div>
+        <h4>Happy Teachers Day</h4>
+        <p>A tribute page dedicated to our amazing teachers.</p>
+        <img class="project-image" src="image/teachers-day.jpg" alt="Happy Teachers Day project screenshot" loading="lazy">
+        <a class="btn btn-primary" href="https://godindan.github.io/teachersday/" target="_self">Open Project</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-icon">🍲</div>
+        <h4>Food Recipe</h4>
+        <p>A delicious food recipe page I built as a project.</p>
+        <img class="project-image" src="image/food-recipe.jpg" alt="Food Recipe project screenshot" loading="lazy">
+        <a class="btn btn-primary" href="https://godindan.github.io/FoodRecipe/" target="_self">Open Project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Contact <span>Me</span></h2>
+    <p class="section-sub">Feel free to reach out — I'd love to hear from you!</p>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-icon">👤</div>
+        <h4>Name</h4>
+        <p>Godin Dan Estella</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-icon">📞</div>
+        <h4>Phone Number</h4>
+        <p>09562177512</p>
+      </div>
+      <div class="contact-card reveal">
+        <div class="contact-icon">✉️</div>
+        <h4>Email Address</h4>
+        <p>chizumitsuru634@gmail.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Godin Dan Estella. All Rights Reserved.</p>
+    <p class="footer-sub">Built with passion and dedication as part of my ITE 1 Portfolio Project.</p>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+
+
+<script src="script.js"></script>
+</body>
+</html>
