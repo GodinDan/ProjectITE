@@ -1,23 +1,45 @@
-/* ============================================================
-   Godin Dan Estella — Portfolio
-   External JavaScript (script.js)
-   Interactions:
-   1. Welcome message (alert)
-   2. Dark / Light mode toggle
-   3. Show / Hide "Read More" information
-   4. Back-to-top button
-   5. Current date & time (live)
-   6. Alert when clicking a project button
-   7. Typing animation in hero
-   8. Mobile hamburger navigation
-   9. Active nav link highlighting
-   10. Scroll reveal animations
-   ============================================================ */
 
-// ---------- 1. Welcome message ----------
-window.addEventListener("load", function () {
+// ---------- 1. Custom welcome popup ----------
+window.addEventListener('load', function () {
+  const welcomeSessionKey = 'gdePortfolioWelcomeShown';
+  try {
+    if (sessionStorage.getItem(welcomeSessionKey) === 'yes') return;
+  } catch (error) { /* Still allow the popup if browser storage is unavailable. */ }
   setTimeout(function () {
-    alert("👋 Welcome to my portfolio!\n\nHello and Welcome! 🎉\nI'm Godin Dan Estella — feel free to explore and get to know me better!");
+    const popupStyle = document.createElement('style');
+    popupStyle.textContent = `
+      .welcome-dialog { box-sizing: border-box; width: min(460px, calc(100% - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; margin: auto; padding: 30px; border: 1px solid var(--border, #ddd); border-radius: 20px; background: var(--card, #fff); color: var(--text, #1e293b); box-shadow: 0 24px 80px rgba(0,0,0,.25); font-family: Poppins, sans-serif; }
+      .welcome-dialog::backdrop { background: rgba(11,17,32,.55); backdrop-filter: blur(5px); }
+      .welcome-dialog h2 { margin: 0 0 14px; font-size: 24px; line-height: 1.35; }
+      .welcome-dialog p { margin: 0 0 24px; color: var(--text-muted, #64748b); line-height: 1.7; }
+      .welcome-dialog button { font: inherit; }
+    `;
+    document.head.appendChild(popupStyle);
+    const dialog = document.createElement('dialog');
+    dialog.className = 'welcome-dialog';
+    dialog.setAttribute('aria-labelledby', 'welcome-title');
+    dialog.setAttribute('aria-describedby', 'welcome-message');
+    dialog.innerHTML = '<h2 id="welcome-title">Welcome to my portfolio!</h2><p id="welcome-message">Hello and welcome! I’m Godin Dan Estella — feel free to explore and get to know me better!</p><button type="button" class="btn btn-primary" autofocus>Let’s explore</button>';
+    document.body.appendChild(dialog);
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    dialog.querySelector('button').addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target !== dialog) return;
+      const rect = dialog.getBoundingClientRect();
+      if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      document.body.style.overflow = previousOverflow;
+      dialog.remove();
+      popupStyle.remove();
+      if (previousFocus && typeof previousFocus.focus === 'function') previousFocus.focus();
+    }, { once: true });
+    document.body.style.overflow = 'hidden';
+    dialog.showModal();
+    try {
+      sessionStorage.setItem(welcomeSessionKey, 'yes');
+    } catch (error) { /* Storage may be disabled by browser privacy settings. */ }
   }, 600);
 });
 
